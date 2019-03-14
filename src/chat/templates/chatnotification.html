@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+  <body>
+{% block script %}
+    <script src="{% static 'js/jquery.bootstrap-growl.js' %}"></script>
+      <script type="text/javascript">
+
+
+          $(function(){
+
+            setTimeout(function() {
+                    $.bootstrapGrowl("Nuevo Mensaje Recibido", { type: 'success' });
+                }, 1000);
+
+          });
+
+
+
+
+     </script>
+{% endblock %}
+
+</body>
+
+{% endblock %}

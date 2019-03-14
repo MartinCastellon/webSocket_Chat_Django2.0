@@ -19,7 +19,7 @@ class InboxView(LoginRequiredMixin, ListView):
 class ThreadView(LoginRequiredMixin, FormMixin, DetailView):
     template_name = 'chat/thread.html'
     form_class = ComposeForm
-    success_url = './'
+    success_url = './mariovega'
 
     def get_queryset(self):
         return Thread.objects.by_user(self.request.user)
@@ -49,8 +49,6 @@ class ThreadView(LoginRequiredMixin, FormMixin, DetailView):
     def form_valid(self, form):
         thread = self.get_object()
         user = self.request.user
-        message = form.cleaned_data.get("message")
+        message = form.cleaned_data.get("Mensaje")
         ChatMessage.objects.create(user=user, thread=thread, message=message)
         return super().form_valid(form)
-
-

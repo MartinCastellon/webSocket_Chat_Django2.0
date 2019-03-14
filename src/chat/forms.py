@@ -2,7 +2,7 @@ from django import forms
 
 
 class ComposeForm(forms.Form):
-    message = forms.CharField(
+    Mensaje = forms.CharField(
             widget=forms.TextInput(
                 attrs={"class": "form-control"}
                 )
